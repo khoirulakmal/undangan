@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="./css/app.css">
 </head>
 
-<body data-email="user@example.com" data-password="12345678" data-url="https://api.ulems.my.id">
+<body data-email="user@example.com" data-password="12345678" data-url="https://undangan-api-bice-ten.vercel.app">
     <nav class="navbar navbar-dark bg-dark navbar-expand fixed-bottom rounded-top-4 p-0" id="navbar-example2">
         <ul class="navbar-nav nav-justified w-100 align-items-center">
             <li class="nav-item">
@@ -94,7 +94,7 @@
                 </div>
                 <h1 class="font-estetik my-4" style="font-size: 3rem;">Hani & Faisal</h1>
                 <h4>Minggu, 17 September 2023</h4>
-                <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-2" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Wahyu%20and%20Riski&details=The%20Wedding%20of%20Wahyu%20and%20Riski%20%7C%2015%20Maret%202023%20%7C%20RT%2010%20RW%2002,%20Desa%20Pajerukan,%20Kec.%20Kalibagor,%20Kab.%20Banyumas,%20Jawa%20Tengah%2053191%20%7C%2010.00%20-%2011.00%20WIB&dates=20230315T100000/20230315T110000&location=https://goo.gl/maps/ALZR6FJZU3kxVwN86">
+                <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-2" target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20230824T030000Z%2F20230824T040000Z&text=The%20Wedding%20of%20Hani%20and%20Faisal&location=https%3A%2F%2Fgoo.gl%2Fmaps%2FhN2HCy9t2wM8DjVb7&details=The%20Wedding%20of%20Hani%20and%20Faisal%20%7C%2017%20September%202023%20%7C%20Jl.%20Terbayan%20Utara%20No.22%20Ungaran%20Barat%2C%20Kab%20Semarang%20%7C%2010.00%20WIB%20-%20Selesai">
                     <i class="fa-solid fa-calendar-check me-2"></i>Save The Date
                 </a>
                 <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
@@ -253,6 +253,65 @@
                 </div>
             </div>
         </section>
+
+
+	<section class="m-0 p-0" id="ucapan">
+        <div class="container">
+            <div class="card-body border rounded-4 shadow p-3">
+                <h1 class="font-estetik text-center mb-3" style="font-size: 3rem;">Ucapan & Doa</h1>
+                <input type="hidden" id="idbalasan">
+                <div class="mb-1" id="balasan"></div>
+                <div class="mb-3">
+                    <label for="formnama" class="form-label">Nama</label>
+                    <input type="text" class="form-control shadow-sm" id="formnama" placeholder="Isikan Nama Anda">
+                </div>
+                <div class="mb-3">
+                    <label for="hadiran" class="form-label" id="labelhadir">Kehadiran</label>
+                    <select class="form-select shadow-sm" aria-label="selectkehadiran" id="hadiran">
+                        <option value="0" selected>Konfirmasi Kehadiran</option>
+                        <option value="1">Hadir</option>
+                        <option value="2">Berhalangan</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formpesan" class="form-label">Ucapan & Doa</label>
+                    <textarea class="form-control shadow-sm" id="formpesan" rows="4" placeholder="Tulis Ucapan & Doa"></textarea>
+                </div>
+                <div class="d-flex">
+                    <button class="flex-fill btn btn-danger btn-sm rounded-4 shadow m-1" style="display: none;" onclick="resetForm()" id="batal">
+                        Batal<i class="fa-solid fa-xmark ms-1"></i>
+                    </button>
+                    <button class="flex-fill btn btn-primary btn-sm rounded-4 shadow m-1" style="display: none;" onclick="kirimBalasan()" id="kirimbalasan">
+                        Kirim<i class="fa-solid fa-paper-plane ms-1"></i>
+                    </button>
+                </div>
+                <div class="d-grid mb-2">
+                    <button class="btn btn-primary btn-sm rounded-4 shadow" onclick="kirim()" id="kirim">
+                        Kirim<i class="fa-solid fa-paper-plane ms-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="rounded-4 mt-4 mb-2">
+                <div id="daftarucapan"></div>
+            </div>
+
+            <nav class="d-flex justify-content-center">
+                <ul class="pagination mb-0">
+                    <li class="page-item disabled" id="previous">
+                        <button class="page-link" onclick="pagination.previous(this)" aria-label="Previous">
+                            <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
+                        </button>
+                    </li>
+                    <li class="page-item" id="next">
+                        <button class="page-link" onclick="pagination.next(this)" aria-label="Next">
+                            Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
 
         <div style="background-color: #111111 !important; margin-top: -5px; padding-bottom: 4rem;">
             <div class="container">
